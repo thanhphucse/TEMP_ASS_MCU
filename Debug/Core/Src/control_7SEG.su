@@ -1,0 +1,6 @@
+control_7SEG.c:12:6:display7SEG_horizontal	16	static
+control_7SEG.c:116:6:display7SEG_vertical	16	static
+control_7SEG.c:222:6:update7SEG_horizontal	16	static
+control_7SEG.c:239:6:update7SEG_vertical	16	static
+control_7SEG.c:256:6:off7SEG_horizontal	8	static
+control_7SEG.c:260:6:off7SEG_vertical	8	static

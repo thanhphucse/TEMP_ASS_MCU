@@ -1,0 +1,7 @@
+button.c:25:5:isButton_BUT1_Pressed	4	static
+button.c:34:5:isButton_BUT2_Pressed	4	static
+button.c:43:5:isButton_BUT3_Pressed	4	static
+button.c:52:5:isButton_BUT1_LongPressed	4	static
+button.c:59:5:isButton_BUT2_LongPressed	4	static
+button.c:66:5:isButton_BUT3_LongPressed	4	static
+button.c:74:6:getKeyInput	16	static
