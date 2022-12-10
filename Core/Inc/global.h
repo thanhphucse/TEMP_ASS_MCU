@@ -42,4 +42,5 @@ extern int time_yellow_vertical_temp;
 extern int index_horizontal;
 extern int index_vertical;
 
+
 #endif /* INC_GLOBAL_H_ */

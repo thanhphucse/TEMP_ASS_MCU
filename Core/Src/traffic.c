@@ -9,6 +9,7 @@
 #define SRC_TRAFFIC_C_
 
 #include "traffic.h"
+#include "global.h"
 #include "main.h"
 
 void setRed_horizontal(){
@@ -114,4 +115,13 @@ void offRedYellow_vertical(){
 	HAL_GPIO_WritePin(YELLOWB_GPIO_Port, YELLOWB_Pin, GPIO_PIN_RESET);
 }
 
+void resetTimeTraffic(){
+	time_red_horizontal_temp = time_red_horizontal;
+	time_green_horizontal_temp = time_green_horizontal;
+	time_yellow_horizontal_temp = time_yellow_horizontal;
+
+	time_red_vertical_temp = time_red_vertical;
+	time_green_vertical_temp = time_green_vertical;
+	time_yellow_vertical_temp = time_yellow_vertical;
+}
 #endif /* SRC_TRAFFIC_C_ */

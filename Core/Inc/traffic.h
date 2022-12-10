@@ -37,4 +37,5 @@ void offGreenYellow_vertical();// turn off green and yellow led on vertical road
 void offGreenRed_vertical();// turn off green and red led on vertical road
 void offRedYellow_vertical();// turn off red and yellow led on vertical road
 
+void resetTimeTraffic();
 #endif /* INC_TRAFFIC_H_ */
