@@ -26,10 +26,26 @@ void fsm_pedestrian_run(){
 		case pedes_red:
 			// turn red pedestrian light
 			set_red_pedes();
+			if (timer30_flag == 1){
+				status_pedestrian_light = pedes_off;
+			}
+
+			if (status_traffic_blink_horizontal == red_horizontal)
+				status_pedestrian_light = pedes_green;
+			//if traffic light is green/yellow => pedestrian light is red
+			else
+				status_pedestrian_light = pedes_red;
+
 			break;
 		case pedes_green:
 			// turn green pedestrian light
 			set_green_pedes();
+
+			if (status_traffic_blink_horizontal == red_horizontal)
+				status_pedestrian_light = pedes_green;
+			//if traffic light is green/yellow => pedestrian light is red
+			else
+				status_pedestrian_light = pedes_red;
 
 			//buzzer
 			if (time_red_horizontal_temp <= 3){
