@@ -1,7 +1,7 @@
 /*
  * software_timer.c
  *
- *  Created on: Nov 7, 2022
+ *  Created on: Dec 13, 2022
  *      Author: Welcome
  */
 
@@ -52,6 +52,10 @@ int timer10_counter = 0;
 // timer11 for limit time in mannual mode in vertical
 int timer11_flag = 0;
 int timer11_counter = 0;
+
+// timer30 for 2 cycle trafic light
+int timer30_flag = 0;
+int timer30_counter = 0;
 
 void setTimer1(int duration){
 	timer1_counter = duration/TICK;
@@ -106,6 +110,11 @@ void setTimer10(int duration){
 void setTimer11(int duration){
 	timer11_counter = duration/TICK;
 	timer11_flag = 0;
+}
+
+void setTimer30(int duration){
+	timer30_counter = duration/TICK;
+	timer30_flag = 0;
 }
 
 void timerRun(){
@@ -163,4 +172,10 @@ void timerRun(){
 	if(timer11_counter == 0){
 		timer11_flag = 1;
 	}
+
+	if(timer30_counter > 0) timer30_counter--;
+	if(timer30_counter == 0){
+		timer30_flag = 1;
+	}
 }
+

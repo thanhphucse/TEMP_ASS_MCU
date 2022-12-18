@@ -1,7 +1,7 @@
 /*
  * fsm_mannual.c
  *
- *  Created on: Dec 6, 2022
+ *  Created on: Dec 13, 2022
  *      Author: Welcome
  */
 #include "fsm_mannual.h"
@@ -9,7 +9,6 @@
 #include "software_timer.h"
 #include "global.h"
 #include "traffic.h"
-#include "control_7SEG.h"
 #include "button.h"
 #include "fsm_traffic_blink.h"
 
@@ -88,3 +87,5 @@ void fsm_mannual_run(){
 			break;
 	}
 }
+
+

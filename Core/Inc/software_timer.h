@@ -1,7 +1,7 @@
 /*
  * software_timer.h
  *
- *  Created on: Nov 7, 2022
+ *  Created on: Dec 13, 2022
  *      Author: Welcome
  */
 
@@ -54,6 +54,11 @@ extern int timer10counter;
 extern int timer11_flag;
 extern int timer11counter;
 
+
+//pedes
+extern int timer30_flag;
+extern int timer30counter;
+
 void setTimer1(int duration);
 void setTimer2(int duration);
 void setTimer3(int duration);
@@ -65,7 +70,7 @@ void setTimer8(int duration);
 void setTimer9(int duration);
 void setTimer10(int duration);
 void setTimer11(int duration);
-
+void setTimer30(int duration);
 
 void timerRun();
 

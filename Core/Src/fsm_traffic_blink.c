@@ -1,9 +1,10 @@
 /*
  * fsm_traffic_blink.c
  *
- *  Created on: Nov 8, 2022
+ *  Created on: Dec 13, 2022
  *      Author: Welcome
  */
+
 #include "fsm_traffic_blink.h"
 #include "software_timer.h"
 #include "traffic_buffer.h"

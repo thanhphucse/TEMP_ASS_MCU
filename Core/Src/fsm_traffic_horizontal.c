@@ -1,7 +1,7 @@
 /*
- * fsm_traffic_led_horizontal.c
+ * fsm_traffic_horizontal.c
  *
- *  Created on: Nov 7, 2022
+ *  Created on: Dec 13, 2022
  *      Author: Welcome
  */
 
@@ -22,7 +22,7 @@ void fsm_traffic_horizontal_run(){
 			break;
 		case modifying_led_red_horizontal:
 			// turn off led green and yellow
-			offGreenYellow_horizontal();
+//			offGreenYellow_horizontal();
 			if(timer8_flag == 1){
 				//toggle led red with frequency 2Hz
 				toggleRed_horizontal();
@@ -30,7 +30,8 @@ void fsm_traffic_horizontal_run(){
 			}
 			break;
 		case modifying_led_yellow_horizontal:
-			offGreenRed_horizontal();
+//			offGreenRed_horizontal();
+//			offAllLed_horizontal();
 			if(timer8_flag == 1){
 				//toggle led yellow with frequency 2Hz
 				toggleYellow_horizontal();
@@ -38,7 +39,7 @@ void fsm_traffic_horizontal_run(){
 			}
 			break;
 		case modifying_led_green_horizontal:
-			offRedYellow_horizontal();
+//			offRedYellow_horizontal();
 			if(timer8_flag == 1){
 				//toggle led green with frequency 2Hz
 				toggleGreen_horizontal();
@@ -51,3 +52,4 @@ void fsm_traffic_horizontal_run(){
 			break;
 	}
 }
+

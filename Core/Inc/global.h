@@ -1,7 +1,7 @@
 /*
  * global.h
  *
- *  Created on: Nov 7, 2022
+ *  Created on: Dec 13, 2022
  *      Author: Welcome
  */
 
@@ -17,6 +17,7 @@ extern int status_system;
 #define		MODE3	3
 #define		MODE4	4
 #define		MAN_MODE 95
+//#define		pedes_off	5
 
 // declare time duration for red, green, yellow in horizontal road
 extern int time_red_horizontal;
@@ -42,5 +43,6 @@ extern int time_yellow_vertical_temp;
 extern int index_horizontal;
 extern int index_vertical;
 
+//extern int status_pedestrian_light;
 
 #endif /* INC_GLOBAL_H_ */

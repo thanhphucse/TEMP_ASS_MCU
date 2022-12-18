@@ -1,7 +1,7 @@
 /*
- * fsm_traffic.h
+ * fsm_traffic_blink.h
  *
- *  Created on: Nov 8, 2022
+ *  Created on: Dec 13, 2022
  *      Author: Welcome
  */
 
@@ -24,4 +24,5 @@ extern int status_traffic_blink_vertical;
 
 void fsm_traffic_blink_horizontal_run();
 void fsm_traffic_blink_vertical_run();
+
 #endif /* INC_FSM_TRAFFIC_BLINK_H_ */

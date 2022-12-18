@@ -1,7 +1,7 @@
 /*
- * system.h
+ * fsm_system.h
  *
- *  Created on: Nov 7, 2022
+ *  Created on: Dec 13, 2022
  *      Author: Welcome
  */
 
@@ -13,6 +13,7 @@
 #include "fsm_7SEG_horizontal.h"
 #include "fsm_7SEG_vertical.h"
 #include "fsm_traffic_blink.h"
+#include "fsm_pedestrian.h"
 
 void fsm_system_run();
 

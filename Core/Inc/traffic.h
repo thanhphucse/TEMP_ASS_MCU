@@ -1,7 +1,7 @@
 /*
  * traffic.h
  *
- *  Created on: Nov 7, 2022
+ *  Created on: Dec 13, 2022
  *      Author: Welcome
  */
 
@@ -38,4 +38,9 @@ void offGreenRed_vertical();// turn off green and red led on vertical road
 void offRedYellow_vertical();// turn off red and yellow led on vertical road
 
 void resetTimeTraffic();
+
+void set_off_pedes();// turn off pedestrian light
+void set_red_pedes();// turn red pedestrian light
+void set_green_pedes();// turn green pedestrian light
+
 #endif /* INC_TRAFFIC_H_ */

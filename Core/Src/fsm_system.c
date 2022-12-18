@@ -1,7 +1,7 @@
 /*
- * system.c
+ * fsm_system.c
  *
- *  Created on: Nov 7, 2022
+ *  Created on: Dec 13, 2022
  *      Author: Welcome
  */
 #include "fsm_system.h"
@@ -27,12 +27,43 @@ fsm_system_run(){
 			status_7SEG_vertical = display_countDown_vertical;
 			if(isButton_BUT1_Pressed() == 1){
 				status_system = MODE2;
+				// pedestrian light only in mode 1
+				status_pedestrian_light = pedes_off;
 			}
 
 			if(isButton_BUT2_Pressed() == 1){
 				status_system = MAN_MODE;
+				// pedestrian light only in mode 1
+				status_pedestrian_light = pedes_off;
 			}
+			// *****
+			// pedestrian light were adding to normal mode when PedesButton is pressed
+			if (isButton_Pedes_Pressed() == 1 ){
+				//#################
+				//buzzer bip 1 time
+
+
+
+				// display pedestrian light by finite state machine 2 cycle at the time pressed
+				setTimer30(2000*(time_red_horizontal+time_green_horizontal+time_yellow_horizontal));
+
+				//if traffic light is red => pedestrian light is green
+				if (status_traffic_blink_horizontal == red_horizontal)
+					status_pedestrian_light = pedes_green;
+				//if traffic light is green/yellow => pedestrian light is red
+				else
+					status_pedestrian_light = pedes_red;
+
+			}
+			// turn off pedestrian light
+			// if PedesButton_Pressed() == 0 for 2 cycle and status_system == 1 (normal mode) for 2 cycle
+			if (timer30_flag == 1){
+				status_pedestrian_light = pedes_off;
+			}
+			// (status_traffic_blink_horizontal == green_horizontal || status_traffic_blink_horizontal == yellow_horizontal)){
+
 			break;
+
 		case MAN_MODE:
 			fsm_mannual_run();
 			status_7SEG_horizontal = off_horizontal;
@@ -120,3 +151,5 @@ fsm_system_run(){
 			break;
 	}
 }
+
+

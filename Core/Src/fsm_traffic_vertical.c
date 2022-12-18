@@ -1,7 +1,7 @@
 /*
- * fsm_traffic_led_vertical.c
+ * fsm_traffic_vertical.c
  *
- *  Created on: Nov 7, 2022
+ *  Created on: Dec 13, 2022
  *      Author: Welcome
  */
 #include "fsm_traffic_vertical.h"
@@ -18,14 +18,15 @@ void fsm_traffic_vertical_run(){
 			fsm_traffic_blink_vertical_run();
 			break;
 		case modifying_led_red_vertical:
-			offGreenYellow_vertical();
+//			offGreenYellow_vertical();
 			if(timer7_flag == 1){
 				toggleRed_vertical();
 				setTimer7(500);
 			}
 			break;
 		case modifying_led_yellow_vertical:
-			offGreenRed_vertical();
+//			offGreenRed_vertical();
+//			offAllLed_vertical();
 			if(timer7_flag == 1){
 				toggleYellow_vertical();
 				setTimer7(500);
@@ -33,7 +34,7 @@ void fsm_traffic_vertical_run(){
 			break;
 		case modifying_led_green_vertical:
 			// turn off red and yellow led
-			offRedYellow_vertical();
+//			offRedYellow_vertical();
 			if(timer7_flag == 1){
 				//toggle green led with frequency 2Hz
 				toggleGreen_vertical();
@@ -46,3 +47,4 @@ void fsm_traffic_vertical_run(){
 			break;
 	}
 }
+

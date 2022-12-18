@@ -1,8 +1,8 @@
 Core/Src/fsm_system.o: ../Core/Src/fsm_system.c ../Core/Inc/fsm_system.h \
  ../Core/Inc/fsm_traffic_horizontal.h ../Core/Inc/fsm_traffic_vertical.h \
  ../Core/Inc/fsm_7SEG_horizontal.h ../Core/Inc/fsm_7SEG_vertical.h \
- ../Core/Inc/fsm_traffic_blink.h ../Core/Inc/global.h \
- ../Core/Inc/button.h ../Core/Inc/main.h \
+ ../Core/Inc/fsm_traffic_blink.h ../Core/Inc/fsm_pedestrian.h \
+ ../Core/Inc/global.h ../Core/Inc/button.h ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -27,10 +27,10 @@ Core/Src/fsm_system.o: ../Core/Src/fsm_system.c ../Core/Inc/fsm_system.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
- ../Core/Inc/control_7SEG.h ../Core/Inc/traffic.h \
- ../Core/Inc/control_7SEG.h ../Core/Inc/traffic_buffer.h \
- ../Core/Inc/fsm_traffic_blink.h ../Core/Inc/fsm_mannual.h \
- ../Core/Inc/software_timer.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
+ ../Core/Inc/traffic.h ../Core/Inc/control_7SEG.h \
+ ../Core/Inc/traffic_buffer.h ../Core/Inc/fsm_traffic_blink.h \
+ ../Core/Inc/fsm_mannual.h ../Core/Inc/software_timer.h
 
 ../Core/Inc/fsm_system.h:
 
@@ -43,6 +43,8 @@ Core/Src/fsm_system.o: ../Core/Src/fsm_system.c ../Core/Inc/fsm_system.h \
 ../Core/Inc/fsm_7SEG_vertical.h:
 
 ../Core/Inc/fsm_traffic_blink.h:
+
+../Core/Inc/fsm_pedestrian.h:
 
 ../Core/Inc/global.h:
 
@@ -98,7 +100,7 @@ Core/Src/fsm_system.o: ../Core/Src/fsm_system.c ../Core/Inc/fsm_system.h \
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
 
-../Core/Inc/control_7SEG.h:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 
 ../Core/Inc/traffic.h:
 

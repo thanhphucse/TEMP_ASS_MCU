@@ -10,6 +10,7 @@ C_SRCS += \
 ../Core/Src/fsm_7SEG_horizontal.c \
 ../Core/Src/fsm_7SEG_vertical.c \
 ../Core/Src/fsm_mannual.c \
+../Core/Src/fsm_pedestrian.c \
 ../Core/Src/fsm_system.c \
 ../Core/Src/fsm_traffic_blink.c \
 ../Core/Src/fsm_traffic_horizontal.c \
@@ -31,6 +32,7 @@ OBJS += \
 ./Core/Src/fsm_7SEG_horizontal.o \
 ./Core/Src/fsm_7SEG_vertical.o \
 ./Core/Src/fsm_mannual.o \
+./Core/Src/fsm_pedestrian.o \
 ./Core/Src/fsm_system.o \
 ./Core/Src/fsm_traffic_blink.o \
 ./Core/Src/fsm_traffic_horizontal.o \
@@ -52,6 +54,7 @@ C_DEPS += \
 ./Core/Src/fsm_7SEG_horizontal.d \
 ./Core/Src/fsm_7SEG_vertical.d \
 ./Core/Src/fsm_mannual.d \
+./Core/Src/fsm_pedestrian.d \
 ./Core/Src/fsm_system.d \
 ./Core/Src/fsm_traffic_blink.d \
 ./Core/Src/fsm_traffic_horizontal.d \

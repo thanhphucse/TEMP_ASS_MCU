@@ -1,12 +1,13 @@
 /*
  * fsm_7SEG_vertical.h
  *
- *  Created on: Nov 7, 2022
+ *  Created on: Dec 13, 2022
  *      Author: Welcome
  */
 
 #ifndef INC_FSM_7SEG_VERTICAL_H_
 #define INC_FSM_7SEG_VERTICAL_H_
+
 //states for fsm_7SEG_vertical
 #define display_countDown_vertical	15
 #define display_time_value			16

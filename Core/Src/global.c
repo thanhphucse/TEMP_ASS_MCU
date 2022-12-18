@@ -1,11 +1,12 @@
 /*
  * global.c
  *
- *  Created on: Nov 7, 2022
+ *  Created on: Dec 13, 2022
  *      Author: Welcome
  */
 #include "global.h"
 #include "traffic_buffer.h"
+#include "fsm_system.h"
 
 int status_system = INIT;
 
@@ -28,4 +29,4 @@ int time_red_vertical_temp = 5;
 int index_horizontal = 0;
 int index_vertical = 0;
 
-
+//int status_pedestrian_light = pedes_off;
