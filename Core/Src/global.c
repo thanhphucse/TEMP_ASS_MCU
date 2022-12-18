@@ -7,6 +7,7 @@
 #include "global.h"
 #include "traffic_buffer.h"
 #include "fsm_system.h"
+#include "buzzer.h"
 
 int status_system = INIT;
 
@@ -29,4 +30,7 @@ int time_red_vertical_temp = 10;
 int index_horizontal = 0;
 int index_vertical = 0;
 
-//int status_pedestrian_light = pedes_off;
+//Buzzer
+//int FSM_Buzzer_State = OFF;
+//int Increase_Duty_Cycle = 99;
+//int Increase_Speed = 5;

@@ -57,6 +57,10 @@ int timer11_counter = 0;
 int timer30_flag = 0;
 int timer30_counter = 0;
 
+//timer for buzzer
+int timer31_flag = 0;
+int timer31_counter = 0;
+
 void setTimer1(int duration){
 	timer1_counter = duration/TICK;
 	timer1_flag = 0;
@@ -115,6 +119,11 @@ void setTimer11(int duration){
 void setTimer30(int duration){
 	timer30_counter = duration/TICK;
 	timer30_flag = 0;
+}
+
+void setTimer31(int duration){
+	timer31_counter = duration/TICK;
+	timer31_flag = 0;
 }
 
 void timerRun(){
@@ -176,6 +185,11 @@ void timerRun(){
 	if(timer30_counter > 0) timer30_counter--;
 	if(timer30_counter == 0){
 		timer30_flag = 1;
+	}
+
+	if(timer31_counter > 0) timer31_counter--;
+	if(timer31_counter == 0){
+		timer31_flag = 1;
 	}
 }
 

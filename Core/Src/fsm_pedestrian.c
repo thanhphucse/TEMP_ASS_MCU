@@ -12,6 +12,7 @@
 #include "software_timer.h"
 #include "traffic.h"
 #include "global.h"
+#include "buzzer.h"
 
 
 int status_pedestrian_light = pedes_off;
@@ -48,17 +49,13 @@ void fsm_pedestrian_run(){
 				status_pedestrian_light = pedes_red;
 
 			//buzzer
-			if (time_red_horizontal_temp <= 3){
-				//##########################
-				//buzzer bip louder + faster
-
+			if (time_red_horizontal_temp < 4){ //buzzer bip louder + faster
 				//change state
-				//buzzer state
+				FSM_Buzzer_State = ON;
+				setTimer31(TICK);
 				if (time_red_horizontal_temp == 0){
-					//###########
 					//buzzer stop
-
-
+					FSM_Buzzer_State=OFF;
 				}
 
 			}

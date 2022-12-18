@@ -59,6 +59,10 @@ extern int timer11counter;
 extern int timer30_flag;
 extern int timer30counter;
 
+//buzzer
+extern int timer31_flag;
+extern int timer31counter;
+
 void setTimer1(int duration);
 void setTimer2(int duration);
 void setTimer3(int duration);
@@ -71,6 +75,7 @@ void setTimer9(int duration);
 void setTimer10(int duration);
 void setTimer11(int duration);
 void setTimer30(int duration);
+void setTimer31(int duration);
 
 void timerRun();
 

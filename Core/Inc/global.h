@@ -17,7 +17,10 @@ extern int status_system;
 #define		MODE3	3
 #define		MODE4	4
 #define		MAN_MODE 95
-//#define		pedes_off	5
+
+#define ON	1
+#define OFF 0
+#define DURATION_ON_TIME 10 //buzzer on in 100ms
 
 // declare time duration for red, green, yellow in horizontal road
 extern int time_red_horizontal;
@@ -42,7 +45,11 @@ extern int time_yellow_vertical_temp;
 //index for 7SEG buffer in horizontal road and vertical road
 extern int index_horizontal;
 extern int index_vertical;
+//
+////////////////Buzzer//////////////////
+extern int FSM_Buzzer_State;
+extern int Increase_Duty_Cycle;
+extern int Increase_Speed;
 
-//extern int status_pedestrian_light;
 
 #endif /* INC_GLOBAL_H_ */
