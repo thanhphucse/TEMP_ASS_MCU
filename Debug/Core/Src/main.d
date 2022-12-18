@@ -31,7 +31,9 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Inc/fsm_7SEG_vertical.h ../Core/Inc/fsm_traffic_blink.h \
  ../Core/Inc/fsm_pedestrian.h ../Core/Inc/fsm_traffic_horizontal.h \
  ../Core/Inc/fsm_traffic_vertical.h ../Core/Inc/global.h \
- ../Core/Inc/traffic.h ../Core/Inc/software_timer.h
+ ../Core/Inc/traffic.h ../Core/Inc/software_timer.h \
+ ../Core/Inc/fsm_pedestrian.h ../Core/Inc/fsm_mannual.h \
+ ../Core/Inc/buzzer.h ../Core/Inc/global.h
 
 ../Core/Inc/main.h:
 
@@ -118,3 +120,11 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Inc/traffic.h:
 
 ../Core/Inc/software_timer.h:
+
+../Core/Inc/fsm_pedestrian.h:
+
+../Core/Inc/fsm_mannual.h:
+
+../Core/Inc/buzzer.h:
+
+../Core/Inc/global.h:
