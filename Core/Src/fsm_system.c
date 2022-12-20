@@ -39,26 +39,28 @@ fsm_system_run(){
 			// *****
 			// pedestrian light were adding to normal mode when PedesButton is pressed
 			if (isButton_Pedes_Pressed() == 1 ){
-				//#################
+				//change state
+				FSM_Buzzer_State = ON;
 				//buzzer bip 1 time
-
-
-
+				setTimer31(1);
 				// display pedestrian light by finite state machine 2 cycle at the time pressed
 				setTimer30(2000*(time_red_horizontal+time_green_horizontal+time_yellow_horizontal));
 
-				//if traffic light is red => pedestrian light is green
-				if (status_traffic_blink_horizontal == red_horizontal)
-					status_pedestrian_light = pedes_green;
-				//if traffic light is green/yellow => pedestrian light is red
-				else
-					status_pedestrian_light = pedes_red;
 
+				//if traffic light is red => pedestrian light is green
+				if (status_traffic_blink_horizontal == red_horizontal){
+					status_pedestrian_light = pedes_green;
+				}
+				//if traffic light is green/yellow => pedestrian light is red
+				else{
+					status_pedestrian_light = pedes_red;
+				}
 			}
 			// turn off pedestrian light
 			// if PedesButton_Pressed() == 0 for 2 cycle and status_system == 1 (normal mode) for 2 cycle
 			if (timer30_flag == 1){
 				status_pedestrian_light = pedes_off;
+				FSM_Buzzer_State = OFF;
 			}
 			// (status_traffic_blink_horizontal == green_horizontal || status_traffic_blink_horizontal == yellow_horizontal)){
 

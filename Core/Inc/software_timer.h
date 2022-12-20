@@ -63,6 +63,14 @@ extern int timer30counter;
 extern int timer31_flag;
 extern int timer31counter;
 
+// a beep
+extern int timer32_flag;
+extern int timer32counter;
+
+// a beep
+extern int timer33_flag;
+extern int timer33counter;
+
 void setTimer1(int duration);
 void setTimer2(int duration);
 void setTimer3(int duration);
@@ -76,6 +84,8 @@ void setTimer10(int duration);
 void setTimer11(int duration);
 void setTimer30(int duration);
 void setTimer31(int duration);
+void setTimer32(int duration);
+void setTimer33(int duration);
 
 void timerRun();
 

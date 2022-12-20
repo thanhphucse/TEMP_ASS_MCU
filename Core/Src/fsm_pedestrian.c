@@ -13,6 +13,7 @@
 #include "traffic.h"
 #include "global.h"
 #include "buzzer.h"
+#include "button.h"
 
 
 int status_pedestrian_light = pedes_off;
@@ -20,8 +21,10 @@ int status_pedestrian_light = pedes_off;
 void fsm_pedestrian_run(){
 	switch(status_pedestrian_light){
 		case pedes_off:
+			//display
 			//turn off pedestrian light
 			set_off_pedes();
+			//change state
 			break;
 
 		case pedes_red:
@@ -42,8 +45,9 @@ void fsm_pedestrian_run(){
 			// turn green pedestrian light
 			set_green_pedes();
 
-			if (status_traffic_blink_horizontal == red_horizontal)
+			if (status_traffic_blink_horizontal == red_horizontal){
 				status_pedestrian_light = pedes_green;
+			}
 			//if traffic light is green/yellow => pedestrian light is red
 			else
 				status_pedestrian_light = pedes_red;

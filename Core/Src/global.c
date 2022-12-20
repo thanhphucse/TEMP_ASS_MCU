@@ -31,6 +31,6 @@ int index_horizontal = 0;
 int index_vertical = 0;
 
 //Buzzer
-//int FSM_Buzzer_State = OFF;
-//int Increase_Duty_Cycle = 99;
-//int Increase_Speed = 5;
+int FSM_Buzzer_State = OFF;
+int Increase_Duty_Cycle = 99;
+int Increase_Speed = 5;

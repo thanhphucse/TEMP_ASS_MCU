@@ -61,6 +61,14 @@ int timer30_counter = 0;
 int timer31_flag = 0;
 int timer31_counter = 0;
 
+//timer for 1 beep
+int timer32_flag = 0;
+int timer32_counter = 0;
+
+//timer for 2 beep
+int timer33_flag = 0;
+int timer33_counter = 0;
+
 void setTimer1(int duration){
 	timer1_counter = duration/TICK;
 	timer1_flag = 0;
@@ -124,6 +132,16 @@ void setTimer30(int duration){
 void setTimer31(int duration){
 	timer31_counter = duration/TICK;
 	timer31_flag = 0;
+}
+
+void setTimer32(int duration){
+	timer32_counter = duration/TICK;
+	timer32_flag = 0;
+}
+
+void setTimer33(int duration){
+	timer32_counter = duration/TICK;
+	timer32_flag = 0;
 }
 
 void timerRun(){
@@ -190,6 +208,16 @@ void timerRun(){
 	if(timer31_counter > 0) timer31_counter--;
 	if(timer31_counter == 0){
 		timer31_flag = 1;
+	}
+
+	if(timer32_counter > 0) timer32_counter--;
+	if(timer32_counter == 0){
+		timer32_flag = 1;
+	}
+
+	if(timer33_counter > 0) timer33_counter--;
+	if(timer33_counter == 0){
+		timer33_flag = 1;
 	}
 }
 
