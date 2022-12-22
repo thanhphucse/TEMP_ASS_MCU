@@ -18,8 +18,11 @@ extern int status_system;
 #define		MODE4	4
 #define		MAN_MODE 95
 
-#define ON	1
-#define OFF 0
+#define OFF 		20
+#define ONE_BIP 21
+#define TWO_BIP 22
+#define	LOUDER_BIP	23
+
 #define DURATION_ON_TIME 10 //buzzer on in 100ms
 
 // declare time duration for red, green, yellow in horizontal road
