@@ -15,7 +15,10 @@
 #include "fsm_traffic_blink.h"
 #include "fsm_mannual.h"
 #include "software_timer.h"
+
 int FSM_Buzzer_State = OFF;
+
+TIM_HandleTypeDef htim2;
 
 void FSM_Buzzer(){
 	switch(FSM_Buzzer_State){
@@ -35,7 +38,7 @@ void FSM_Buzzer(){
 		//red_traffic_light = 0
 		if(time_red_horizontal_temp==0){
 			FSM_Buzzer_State=OFF;
-			__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANEL_1,0);
+			__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,0);
 		}
 
 		break;

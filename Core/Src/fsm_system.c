@@ -14,11 +14,14 @@
 #include "fsm_mannual.h"
 #include "software_timer.h"
 
+UART_HandleTypeDef huart2;
+uint8_t str[30] = " ";
 
 fsm_system_run(){
 	switch(status_system){
 		case INIT:
 			status_system = MODE1;
+			HAL_UART_Transmit(&huart2, str, sprintf(str, "%s \n", "\rMODE 1 \r"), 1000);
 			break;
 		case MODE1://normal mode: The traffic light application is running normally
 			status_traffic_horizontal = display_traffic_horizontal;
@@ -27,12 +30,15 @@ fsm_system_run(){
 			status_7SEG_vertical = display_countDown_vertical;
 			if(isButton_BUT1_Pressed() == 1){
 				status_system = MODE2;
+				HAL_UART_Transmit(&huart2, str, sprintf(str, "%s \n", "\rMODE 2 \r"), 1000);
+				HAL_UART_Transmit(&huart2, str, sprintf(str, "%d \n", time_red_vertical), 1000);
 				// pedestrian light only in mode 1
 				status_pedestrian_light = pedes_off;
 			}
 
 			if(isButton_BUT2_Pressed() == 1){
 				status_system = MAN_MODE;
+				HAL_UART_Transmit(&huart2, str, sprintf(str, "%s \n", "\rMAN MODE\r"), 1000);
 				// pedestrian light only in mode 1
 				status_pedestrian_light = pedes_off;
 			}
@@ -81,6 +87,7 @@ fsm_system_run(){
 			if(isButton_BUT2_Pressed() == 1){
 				time_red_horizontal++;
 				time_red_vertical++;
+				HAL_UART_Transmit(&huart2, str, sprintf(str, "%d \n",time_red_vertical), 1000);
 			}
 			//update buffer
 			_7SEG_buffer_vertical[0] = time_red_vertical/10;
@@ -94,6 +101,8 @@ fsm_system_run(){
 
 			// change into MODE3
 			if(isButton_BUT1_Pressed() == 1){
+				HAL_UART_Transmit(&huart2, str, sprintf(str, "%s \n", "\rMODE 3 \r"), 1000);
+				HAL_UART_Transmit(&huart2, str, sprintf(str, "%d \n", time_yellow_vertical), 1000);
 				status_system = MODE3;
 			}
 			break;
@@ -107,6 +116,7 @@ fsm_system_run(){
 			if(isButton_BUT2_Pressed() == 1){
 				time_yellow_horizontal++;
 				time_yellow_vertical++;
+				HAL_UART_Transmit(&huart2, str, sprintf(str, "%d \n", time_yellow_vertical), 1000);
 			}
 			//update buffer
 			_7SEG_buffer_vertical[0] = time_yellow_vertical/10;
@@ -119,6 +129,8 @@ fsm_system_run(){
 			}
 			// change into MODE4
 			if(isButton_BUT1_Pressed() == 1){
+				HAL_UART_Transmit(&huart2, str, sprintf(str, "%s \n", "\rMODE 4 \r"), 1000);
+				HAL_UART_Transmit(&huart2, str, sprintf(str, "%d \n", time_green_vertical), 1000);
 				status_system = MODE4;
 			}
 			break;
@@ -132,6 +144,7 @@ fsm_system_run(){
 			if(isButton_BUT2_Pressed() == 1){
 				time_green_horizontal++;
 				time_green_vertical++;
+				HAL_UART_Transmit(&huart2, str, sprintf(str, "%d \n", time_green_vertical), 1000);
 			}
 			//update buffer
 			_7SEG_buffer_vertical[0] = time_green_vertical/10;
@@ -147,6 +160,7 @@ fsm_system_run(){
 				status_traffic_blink_horizontal = init_horizontal;
 				status_traffic_blink_vertical = init_vertical;
 				status_system = INIT;
+//				HAL_UART_Transmit(&huart2, str, sprintf(str, "%s \n", "\rMODE 1 \r"), 1000);
 			}
 			break;
 	}

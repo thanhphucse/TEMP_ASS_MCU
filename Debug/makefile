@@ -64,8 +64,8 @@ all: main-build
 main-build: BTL_F103C6.elf secondary-outputs
 
 # Tool invocations
-BTL_F103C6.elf: $(OBJS) $(USER_OBJS) C:\Users\Administrator\STM32CubeIDE\workspace_1.7.0\BTL_F103C6\STM32F103C6TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "BTL_F103C6.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\Administrator\STM32CubeIDE\workspace_1.7.0\BTL_F103C6\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BTL_F103C6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+BTL_F103C6.elf: $(OBJS) $(USER_OBJS) D:\MCU\TEMP_ASS_MCU\STM32F103C6TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "BTL_F103C6.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\MCU\TEMP_ASS_MCU\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BTL_F103C6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

@@ -19,7 +19,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-
+#include <stdio.h>
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "button.h"
@@ -32,9 +32,10 @@
 #include "global.h"
 #include "traffic.h"
 #include "software_timer.h"
-#include "fsm_pedestrian.h"//
-#include "fsm_mannual.h"//
+#include "fsm_pedestrian.h"
+#include "fsm_mannual.h"
 #include "buzzer.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -70,7 +71,6 @@ static void MX_USART2_UART_Init(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
-
 /* USER CODE BEGIN 0 */
 
 /* USER CODE END 0 */
@@ -79,6 +79,7 @@ static void MX_USART2_UART_Init(void);
   * @brief  The application entry point.
   * @retval int
   */
+
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -107,7 +108,7 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim2);
-  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
+//  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -117,6 +118,7 @@ int main(void)
     setTimer7(500);// toggle led-red/green/yellow vertical road 2Hz while modifying time of it
     setTimer8(500);// toggle led-red/green/yellow horizontal road 2Hz while modifying time of it
     setTimer10(500);// timer blink led-red for debugging
+
     while (1)
     {
     /* USER CODE END WHILE */
@@ -139,6 +141,8 @@ int main(void)
   	  //***
   	  fsm_pedestrian_run();
   	  FSM_Buzzer();
+
+
     }
   /* USER CODE END 3 */
 }
@@ -192,7 +196,6 @@ static void MX_TIM2_Init(void)
 
   TIM_ClockConfigTypeDef sClockSourceConfig = {0};
   TIM_MasterConfigTypeDef sMasterConfig = {0};
-  TIM_OC_InitTypeDef sConfigOC = {0};
 
   /* USER CODE BEGIN TIM2_Init 1 */
 
@@ -212,28 +215,15 @@ static void MX_TIM2_Init(void)
   {
     Error_Handler();
   }
-  if (HAL_TIM_PWM_Init(&htim2) != HAL_OK)
-  {
-    Error_Handler();
-  }
   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
   if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
   {
     Error_Handler();
   }
-  sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 0;
-  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
-  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
-  if (HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
-  {
-    Error_Handler();
-  }
   /* USER CODE BEGIN TIM2_Init 2 */
 
   /* USER CODE END TIM2_Init 2 */
-  HAL_TIM_MspPostInit(&htim2);
 
 }
 
@@ -253,7 +243,7 @@ static void MX_USART2_UART_Init(void)
 
   /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
-  huart2.Init.BaudRate = 115200;
+  huart2.Init.BaudRate = 9600;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
   huart2.Init.StopBits = UART_STOPBITS_1;
   huart2.Init.Parity = UART_PARITY_NONE;

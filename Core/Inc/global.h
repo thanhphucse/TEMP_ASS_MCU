@@ -52,4 +52,6 @@ extern int Increase_Duty_Cycle;
 extern int Increase_Speed;
 
 
+//extern char str[];
+
 #endif /* INC_GLOBAL_H_ */

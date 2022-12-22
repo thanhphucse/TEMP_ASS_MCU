@@ -30,6 +30,7 @@ int time_red_vertical_temp = 10;
 int index_horizontal = 0;
 int index_vertical = 0;
 
+//char str[] = "START";
 //Buzzer
 //int FSM_Buzzer_State = OFF;
 //int Increase_Duty_Cycle = 99;

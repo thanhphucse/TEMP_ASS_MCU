@@ -25,6 +25,7 @@ void fsm_traffic_horizontal_run(){
 //			offGreenYellow_horizontal();
 			if(timer8_flag == 1){
 				//toggle led red with frequency 2Hz
+
 				toggleRed_horizontal();
 				setTimer8(500);
 			}
