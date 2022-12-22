@@ -13,7 +13,7 @@
 #include "fsm_traffic_blink.h"
 #include "fsm_mannual.h"
 #include "software_timer.h"
-
+#include "buzzer.h"
 
 fsm_system_run(){
 	switch(status_system){
@@ -41,8 +41,7 @@ fsm_system_run(){
 			if (isButton_Pedes_Pressed() == 1 ){
 				//change state
 				FSM_Buzzer_State = ONE_BIP;
-				//buzzer bip 1 time
-				setTimer31(1);
+				setTimer32(1000);
 				// display pedestrian light by finite state machine 2 cycle at the time pressed
 				setTimer30(2000*(time_red_horizontal+time_green_horizontal+time_yellow_horizontal));
 
@@ -50,18 +49,17 @@ fsm_system_run(){
 				//if traffic light is red => pedestrian light is green
 				if (status_traffic_blink_horizontal == red_horizontal){
 					status_pedestrian_light = pedes_green;
-					FSM_Buzzer_State = TWO_BIP;
 				}
 				//if traffic light is green/yellow => pedestrian light is red
 				else{
 					status_pedestrian_light = pedes_red;
 				}
+
 			}
 			// turn off pedestrian light
 			// if PedesButton_Pressed() == 0 for 2 cycle and status_system == 1 (normal mode) for 2 cycle
 			if (timer30_flag == 1){
 				status_pedestrian_light = pedes_off;
-				FSM_Buzzer_State = OFF;
 			}
 			// (status_traffic_blink_horizontal == green_horizontal || status_traffic_blink_horizontal == yellow_horizontal)){
 

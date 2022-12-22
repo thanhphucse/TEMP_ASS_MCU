@@ -71,6 +71,12 @@ extern int timer32counter;
 extern int timer33_flag;
 extern int timer33counter;
 
+extern int timer34_flag;
+extern int timer34counter;
+
+extern int timer35_flag;
+extern int timer35counter;
+
 void setTimer1(int duration);
 void setTimer2(int duration);
 void setTimer3(int duration);
@@ -86,6 +92,8 @@ void setTimer30(int duration);
 void setTimer31(int duration);
 void setTimer32(int duration);
 void setTimer33(int duration);
+void setTimer34(int duration);
+void setTimer35(int duration);
 
 void timerRun();
 

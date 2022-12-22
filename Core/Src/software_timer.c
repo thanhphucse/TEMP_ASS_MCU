@@ -69,6 +69,12 @@ int timer32_counter = 0;
 int timer33_flag = 0;
 int timer33_counter = 0;
 
+int timer34_flag = 0;
+int timer34_counter = 0;
+
+int timer35_flag = 0;
+int timer35_counter = 0;
+
 void setTimer1(int duration){
 	timer1_counter = duration/TICK;
 	timer1_flag = 0;
@@ -140,8 +146,18 @@ void setTimer32(int duration){
 }
 
 void setTimer33(int duration){
-	timer32_counter = duration/TICK;
-	timer32_flag = 0;
+	timer33_counter = duration/TICK;
+	timer33_flag = 0;
+}
+
+void setTimer34(int duration){
+	timer34_counter = duration/TICK;
+	timer34_flag = 0;
+}
+
+void setTimer35(int duration){
+	timer35_counter = duration/TICK;
+	timer35_flag = 0;
 }
 
 void timerRun(){
@@ -218,6 +234,15 @@ void timerRun(){
 	if(timer33_counter > 0) timer33_counter--;
 	if(timer33_counter == 0){
 		timer33_flag = 1;
+	}
+
+	if(timer34_counter > 0) timer34_counter--;
+	if(timer34_counter == 0){
+		timer34_flag = 1;
+	}
+	if(timer35_counter > 0) timer35_counter--;
+	if(timer35_counter == 0){
+		timer35_flag = 1;
 	}
 }
 

@@ -18,10 +18,9 @@ extern int status_system;
 #define		MODE4	4
 #define		MAN_MODE 95
 
-#define OFF 		20
-#define ONE_BIP 21
-#define TWO_BIP 22
-#define	LOUDER_BIP	23
+#define OFF 		50
+#define ONE_BIP		51
+#define	LOUDER_BIP	52
 
 #define DURATION_ON_TIME 10 //buzzer on in 100ms
 

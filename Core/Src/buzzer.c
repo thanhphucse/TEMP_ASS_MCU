@@ -23,52 +23,35 @@ TIM_HandleTypeDef htim2;
 void FSM_Buzzer(){
 	switch(FSM_Buzzer_State){
 	case OFF:
+		set_off_buzzer();
 		__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 0);
-		HAL_GPIO_WritePin(LED_BLUE_GPIO_Port, LED_BLUE_Pin, RESET);
 		break;
 	case ONE_BIP:
-		//pedes button pressed, 1 beep
-		if(timer31_flag==1){
-			setTimer32(1000); //set 1 second
-			setTimer31(1);
-			__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 399);
-			HAL_GPIO_WritePin(LED_BLUE_GPIO_Port, LED_BLUE_Pin, SET);
-		}
 		if(timer32_flag==1){  //end 1s
-			FSM_Buzzer_State=OFF;
-			setTimer32(1000); //set 1 second
+			FSM_Buzzer_State = OFF;
+			set_off_buzzer();
 		}
-		break;
-	case TWO_BIP:
-		// 2 beep when traffic light is green
-		if(timer31_flag==1 && status_pedestrian_light ==pedes_green ){
-			setTimer33(2000); //set 2 seconds
-			setTimer32(1000);
-			__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 399);
-			HAL_GPIO_WritePin(LED_BLUE_GPIO_Port, LED_BLUE_Pin, SET);
-			if(timer32_flag==1){
-				__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 0);
-				HAL_GPIO_WritePin(LED_BLUE_GPIO_Port, LED_BLUE_Pin, RESET);
-				setTimer32(1000);
-			}
-			if(timer33_flag==1){
-				FSM_Buzzer_State=OFF;
-			}
+		else {
+//			//pedes button pressed, 1 beep
+				__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 399);
+				set_on_buzzer();
 		}
+
 		break;
 	case LOUDER_BIP:
 		//0 < red_traffic_light < 4s
-		if(time_red_horizontal_temp<4){
+		if(time_red_horizontal_temp < 4 ){
 			__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,Increase_Duty_Cycle);
-			HAL_GPIO_TogglePin(LED_BLUE_GPIO_Port, LED_BLUE_Pin);
+//			HAL_GPIO_TogglePin(LED_BLUE_GPIO_Port, LED_BLUE_Pin);
+			set_on_buzzer();
 			Increase_Duty_Cycle += 50;
 			if(Increase_Duty_Cycle >= 999){
-				Increase_Duty_Cycle = 989;
+				Increase_Duty_Cycle = 99;
 			}
-			//red_traffic_light = 0
-			if(time_red_horizontal_temp==0){
-				FSM_Buzzer_State=OFF;
-			}
+		}
+		else {
+			FSM_Buzzer_State = OFF;
+			set_off_buzzer();
 		}
 		break;
 	default:

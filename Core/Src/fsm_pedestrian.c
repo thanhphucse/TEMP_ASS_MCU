@@ -24,6 +24,7 @@ void fsm_pedestrian_run(){
 			//display
 			//turn off pedestrian light
 			set_off_pedes();
+//			FSM_Buzzer_State = OFF;
 			//change state
 			break;
 
@@ -56,12 +57,6 @@ void fsm_pedestrian_run(){
 			if (time_red_horizontal_temp < 4){ //buzzer bip louder + faster
 				//change state
 				FSM_Buzzer_State = LOUDER_BIP;
-				setTimer31(TICK);
-				if (time_red_horizontal_temp == 0){
-					//buzzer stop
-					FSM_Buzzer_State=OFF;
-				}
-
 			}
 
 			break;

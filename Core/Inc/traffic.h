@@ -43,4 +43,6 @@ void set_off_pedes();// turn off pedestrian light
 void set_red_pedes();// turn red pedestrian light
 void set_green_pedes();// turn green pedestrian light
 
+void set_on_buzzer();
+void set_off_buzzer();
 #endif /* INC_TRAFFIC_H_ */

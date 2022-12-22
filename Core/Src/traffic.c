@@ -149,4 +149,10 @@ void set_green_pedes(){
 	HAL_GPIO_WritePin(D7_PEDES_LIGHT_GPIO_Port, D7_PEDES_LIGHT_Pin, GPIO_PIN_SET);
 }
 
+void set_on_buzzer(){
+	HAL_GPIO_WritePin(LED_BLUE_GPIO_Port, LED_BLUE_Pin, SET);
+}
 
+void set_off_buzzer(){
+	HAL_GPIO_WritePin(LED_BLUE_GPIO_Port, LED_BLUE_Pin, RESET);
+}
