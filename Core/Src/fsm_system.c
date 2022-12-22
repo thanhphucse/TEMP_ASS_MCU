@@ -13,13 +13,11 @@
 #include "fsm_traffic_blink.h"
 #include "fsm_mannual.h"
 #include "software_timer.h"
-<<<<<<< HEAD
+#include "buzzer.h"
+
 
 UART_HandleTypeDef huart2;
 uint8_t str[30] = " ";
-=======
-#include "buzzer.h"
->>>>>>> 906bd82a3581f7b670db585618f455e211a3e553
 
 fsm_system_run(){
 	switch(status_system){

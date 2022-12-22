@@ -118,12 +118,8 @@ int main(void)
     setTimer7(500);// toggle led-red/green/yellow vertical road 2Hz while modifying time of it
     setTimer8(500);// toggle led-red/green/yellow horizontal road 2Hz while modifying time of it
     setTimer10(500);// timer blink led-red for debugging
-<<<<<<< HEAD
-
-=======
     setTimer32(10);
     setTimer34(10);
->>>>>>> 906bd82a3581f7b670db585618f455e211a3e553
     while (1)
     {
     /* USER CODE END WHILE */

@@ -16,13 +16,8 @@
 #include "fsm_mannual.h"
 #include "software_timer.h"
 
-<<<<<<< HEAD
-int FSM_Buzzer_State = OFF;
-=======
 //int FSM_Buzzer_State = OFF;
-
-TIM_HandleTypeDef htim2;
->>>>>>> 906bd82a3581f7b670db585618f455e211a3e553
+//int FSM_Buzzer_State = OFF;
 
 TIM_HandleTypeDef htim2;
 
@@ -37,17 +32,10 @@ void FSM_Buzzer(){
 			FSM_Buzzer_State = OFF;
 			set_off_buzzer();
 		}
-<<<<<<< HEAD
-		//red_traffic_light = 0
-		if(time_red_horizontal_temp==0){
-			FSM_Buzzer_State=OFF;
-			__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,0);
-=======
 		else {
 //			//pedes button pressed, 1 beep
 				__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 399);
 				set_on_buzzer();
->>>>>>> 906bd82a3581f7b670db585618f455e211a3e553
 		}
 
 		break;
@@ -71,4 +59,3 @@ void FSM_Buzzer(){
 		break;
 	}
 }
-
