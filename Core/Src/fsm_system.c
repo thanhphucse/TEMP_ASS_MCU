@@ -13,9 +13,13 @@
 #include "fsm_traffic_blink.h"
 #include "fsm_mannual.h"
 #include "software_timer.h"
+<<<<<<< HEAD
 
 UART_HandleTypeDef huart2;
 uint8_t str[30] = " ";
+=======
+#include "buzzer.h"
+>>>>>>> 906bd82a3581f7b670db585618f455e211a3e553
 
 fsm_system_run(){
 	switch(status_system){
@@ -45,20 +49,21 @@ fsm_system_run(){
 			// *****
 			// pedestrian light were adding to normal mode when PedesButton is pressed
 			if (isButton_Pedes_Pressed() == 1 ){
-				//#################
-				//buzzer bip 1 time
-
-
-
+				//change state
+				FSM_Buzzer_State = ONE_BIP;
+				setTimer32(1000);
 				// display pedestrian light by finite state machine 2 cycle at the time pressed
 				setTimer30(2000*(time_red_horizontal+time_green_horizontal+time_yellow_horizontal));
 
+
 				//if traffic light is red => pedestrian light is green
-				if (status_traffic_blink_horizontal == red_horizontal)
+				if (status_traffic_blink_horizontal == red_horizontal){
 					status_pedestrian_light = pedes_green;
+				}
 				//if traffic light is green/yellow => pedestrian light is red
-				else
+				else{
 					status_pedestrian_light = pedes_red;
+				}
 
 			}
 			// turn off pedestrian light

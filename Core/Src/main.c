@@ -118,7 +118,12 @@ int main(void)
     setTimer7(500);// toggle led-red/green/yellow vertical road 2Hz while modifying time of it
     setTimer8(500);// toggle led-red/green/yellow horizontal road 2Hz while modifying time of it
     setTimer10(500);// timer blink led-red for debugging
+<<<<<<< HEAD
 
+=======
+    setTimer32(10);
+    setTimer34(10);
+>>>>>>> 906bd82a3581f7b670db585618f455e211a3e553
     while (1)
     {
     /* USER CODE END WHILE */
@@ -138,7 +143,6 @@ int main(void)
   	  fsm_traffic_vertical_run();
   	  fsm_traffic_horizontal_run();
   	  ///add function
-  	  //***
   	  fsm_pedestrian_run();
   	  FSM_Buzzer();
 
@@ -274,11 +278,18 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOA, LED_BLUE_Pin|D7_PEDES_LIGHT_Pin|D2_TRAFFIC1_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, D6_PEDES_LIGHT_Pin|LED_RED_Pin|D3_TRAFFIC1_Pin|D5_TRAFFIC2_Pin
                           |D4_TRAFFIC2_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, D7_PEDES_LIGHT_Pin|D2_TRAFFIC1_Pin, GPIO_PIN_RESET);
+  /*Configure GPIO pins : LED_BLUE_Pin D7_PEDES_LIGHT_Pin D2_TRAFFIC1_Pin */
+  GPIO_InitStruct.Pin = LED_BLUE_Pin|D7_PEDES_LIGHT_Pin|D2_TRAFFIC1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pins : A2_BUTTON2_Pin A0_PEDES_BUTTON_Pin */
   GPIO_InitStruct.Pin = A2_BUTTON2_Pin|A0_PEDES_BUTTON_Pin;
@@ -300,13 +311,6 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-
-  /*Configure GPIO pins : D7_PEDES_LIGHT_Pin D2_TRAFFIC1_Pin */
-  GPIO_InitStruct.Pin = D7_PEDES_LIGHT_Pin|D2_TRAFFIC1_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
 }
 

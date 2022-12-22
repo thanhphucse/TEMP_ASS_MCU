@@ -23,3 +23,5 @@ traffic.c:129:6:resetTimeTraffic	4	static
 traffic.c:139:6:set_off_pedes	8	static
 traffic.c:143:6:set_red_pedes	8	static
 traffic.c:147:6:set_green_pedes	8	static
+traffic.c:152:6:set_on_buzzer	8	static
+traffic.c:156:6:set_off_buzzer	8	static

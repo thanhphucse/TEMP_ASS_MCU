@@ -30,7 +30,8 @@ Core/Src/fsm_system.o: ../Core/Src/fsm_system.c ../Core/Inc/fsm_system.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
  ../Core/Inc/traffic.h ../Core/Inc/control_7SEG.h \
  ../Core/Inc/traffic_buffer.h ../Core/Inc/fsm_traffic_blink.h \
- ../Core/Inc/fsm_mannual.h ../Core/Inc/software_timer.h
+ ../Core/Inc/fsm_mannual.h ../Core/Inc/software_timer.h \
+ ../Core/Inc/buzzer.h ../Core/Inc/global.h
 
 ../Core/Inc/fsm_system.h:
 
@@ -113,3 +114,7 @@ Core/Src/fsm_system.o: ../Core/Src/fsm_system.c ../Core/Inc/fsm_system.h \
 ../Core/Inc/fsm_mannual.h:
 
 ../Core/Inc/software_timer.h:
+
+../Core/Inc/buzzer.h:
+
+../Core/Inc/global.h:

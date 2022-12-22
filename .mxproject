@@ -9,6 +9,7 @@ CDefines=USE_HAL_DRIVER;STM32F103x6;USE_HAL_DRIVER;USE_HAL_DRIVER;
 [PreviousGenFiles]
 AdvancedFolderStructure=true
 HeaderFileListSize=3
+<<<<<<< HEAD
 HeaderFiles#0=D:/MCU/TEMP_ASS_MCU/Core/Inc/stm32f1xx_it.h
 HeaderFiles#1=D:/MCU/TEMP_ASS_MCU/Core/Inc/stm32f1xx_hal_conf.h
 HeaderFiles#2=D:/MCU/TEMP_ASS_MCU/Core/Inc/main.h
@@ -21,5 +22,19 @@ SourceFiles#1=D:/MCU/TEMP_ASS_MCU/Core/Src/stm32f1xx_hal_msp.c
 SourceFiles#2=D:/MCU/TEMP_ASS_MCU/Core/Src/main.c
 SourceFolderListSize=1
 SourcePath#0=D:/MCU/TEMP_ASS_MCU/Core/Src
+=======
+HeaderFiles#0=C:/Users/Administrator/STM32CubeIDE/workspace_1.7.0/BTL_F103C6/Core/Inc/stm32f1xx_it.h
+HeaderFiles#1=C:/Users/Administrator/STM32CubeIDE/workspace_1.7.0/BTL_F103C6/Core/Inc/stm32f1xx_hal_conf.h
+HeaderFiles#2=C:/Users/Administrator/STM32CubeIDE/workspace_1.7.0/BTL_F103C6/Core/Inc/main.h
+HeaderFolderListSize=1
+HeaderPath#0=C:/Users/Administrator/STM32CubeIDE/workspace_1.7.0/BTL_F103C6/Core/Inc
+HeaderFiles=;
+SourceFileListSize=3
+SourceFiles#0=C:/Users/Administrator/STM32CubeIDE/workspace_1.7.0/BTL_F103C6/Core/Src/stm32f1xx_it.c
+SourceFiles#1=C:/Users/Administrator/STM32CubeIDE/workspace_1.7.0/BTL_F103C6/Core/Src/stm32f1xx_hal_msp.c
+SourceFiles#2=C:/Users/Administrator/STM32CubeIDE/workspace_1.7.0/BTL_F103C6/Core/Src/main.c
+SourceFolderListSize=1
+SourcePath#0=C:/Users/Administrator/STM32CubeIDE/workspace_1.7.0/BTL_F103C6/Core/Src
+>>>>>>> 906bd82a3581f7b670db585618f455e211a3e553
 SourceFiles=;
 
