@@ -44,6 +44,7 @@ extern int time_red_vertical_temp;
 extern int time_green_vertical_temp;
 extern int time_yellow_vertical_temp;
 
+
 //index for 7SEG buffer in horizontal road and vertical road
 extern int index_horizontal;
 extern int index_vertical;

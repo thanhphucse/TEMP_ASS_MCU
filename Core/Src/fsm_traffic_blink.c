@@ -28,13 +28,17 @@ void fsm_traffic_blink_horizontal_run(){
 			//led red will turn on in traffic_buffer_horizontal[0]/1000 seconds
 			setTimer1(traffic_buffer_horizontal[0]);
 			setTimer3(1000);// count down as a clock
-			HAL_UART_Transmit(&huart2, str, sprintf(str, "%d \n", time_red_horizontal_temp), 1000);
+//			HAL_UART_Transmit(&huart2, str, sprintf(str, "%d \n", time_red_horizontal_temp), 1000);
+			HAL_UART_Transmit(&huart2, str, sprintf(str, "%d \n", time_red_horizontal), 1000);
 			break;
 		case red_horizontal:
 			setRed_horizontal();
 			//update _7SEG_buffer_horizontal
-			_7SEG_buffer_horizontal[0] = time_red_horizontal_temp/10;
-			_7SEG_buffer_horizontal[1] = time_red_horizontal_temp%10;
+//			_7SEG_buffer_horizontal[0] = time_red_horizontal_temp/10;
+//			_7SEG_buffer_horizontal[1] = time_red_horizontal_temp%10;
+
+			_7SEG_buffer_horizontal[0] = time_red_horizontal/10;
+			_7SEG_buffer_horizontal[1] = time_red_horizontal%10;
 
 
 			if(timer3_flag == 1){
@@ -59,9 +63,10 @@ void fsm_traffic_blink_horizontal_run(){
 		case green_horizontal:
 			setGreen_horizontal();
 			//update _7SEG_buffer_horizontal
-			_7SEG_buffer_horizontal[0] = time_green_horizontal_temp/10;
-			_7SEG_buffer_horizontal[1] = time_green_horizontal_temp%10;
-
+//			_7SEG_buffer_horizontal[0] = time_green_horizontal_temp/10;
+//			_7SEG_buffer_horizontal[1] = time_green_horizontal_temp%10;
+			_7SEG_buffer_horizontal[0] = time_green_horizontal/10;
+			_7SEG_buffer_horizontal[1] = time_green_horizontal%10;
 
 			if(timer3_flag == 1){
 
@@ -86,9 +91,10 @@ void fsm_traffic_blink_horizontal_run(){
 		case yellow_horizontal:
 			setYellow_horizontal();
 			//update _7SEG_buffer_horizontal
-			_7SEG_buffer_horizontal[0] = time_yellow_horizontal_temp/10;
-			_7SEG_buffer_horizontal[1] = time_yellow_horizontal_temp%10;
-
+//			_7SEG_buffer_horizontal[0] = time_yellow_horizontal_temp/10;
+//			_7SEG_buffer_horizontal[1] = time_yellow_horizontal_temp%10;
+			_7SEG_buffer_horizontal[0] = time_yellow_horizontal/10;
+			_7SEG_buffer_horizontal[1] = time_yellow_horizontal%10;
 
 			if(timer3_flag == 1){
 
@@ -125,8 +131,10 @@ void fsm_traffic_blink_vertical_run(){
 		case green_vertical:
 			setGreen_vertical();
 			//update _7SEG_buffer_vertical
-			_7SEG_buffer_vertical[0] = time_green_vertical_temp/10;
-			_7SEG_buffer_vertical[1] = time_green_vertical_temp%10;
+//			_7SEG_buffer_vertical[0] = time_green_vertical_temp/10;
+//			_7SEG_buffer_vertical[1] = time_green_vertical_temp%10;
+			_7SEG_buffer_vertical[0] = time_green_vertical/10;
+			_7SEG_buffer_vertical[1] = time_green_vertical%10;
 
 			if(timer5_flag == 1){
 				time_green_vertical_temp--;
@@ -147,8 +155,10 @@ void fsm_traffic_blink_vertical_run(){
 		case yellow_vertical:
 			setYellow_vertical();
 			//update _7SEG_buffer_vertical
-			_7SEG_buffer_vertical[0] = time_yellow_vertical_temp/10;
-			_7SEG_buffer_vertical[1] = time_yellow_vertical_temp%10;
+//			_7SEG_buffer_vertical[0] = time_yellow_vertical_temp/10;
+//			_7SEG_buffer_vertical[1] = time_yellow_vertical_temp%10;
+			_7SEG_buffer_vertical[0] = time_yellow_vertical/10;
+			_7SEG_buffer_vertical[1] = time_yellow_vertical%10;
 
 			if(timer5_flag == 1){
 				time_yellow_vertical_temp--;
@@ -168,8 +178,10 @@ void fsm_traffic_blink_vertical_run(){
 		case red_vertical:
 			setRed_vertical();
 			//update _7SEG_buffer_vertical
-			_7SEG_buffer_vertical[0] = time_red_vertical_temp/10;
-			_7SEG_buffer_vertical[1] = time_red_vertical_temp%10;
+//			_7SEG_buffer_vertical[0] = time_red_vertical_temp/10;
+//			_7SEG_buffer_vertical[1] = time_red_vertical_temp%10;
+			_7SEG_buffer_vertical[0] = time_red_vertical/10;
+			_7SEG_buffer_vertical[1] = time_red_vertical%10;
 
 			if(timer5_flag == 1){
 				time_red_vertical_temp--;
