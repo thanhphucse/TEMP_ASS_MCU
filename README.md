@@ -13,6 +13,7 @@ In this project, the STM32F103RB is used to simulate the 2-way traffic light sys
                                 FINATE STATE MACHINE
 ![image](https://github.com/thanhphucse/TEMP_ASS_MCU/assets/106461205/8f53aa11-c416-4245-b324-3b1a2eda3f1b)
 
-![Bản sao của stateMachineLab3-Trang-1 drawio](https://github.com/thanhphucse/TEMP_ASS_MCU/assets/106461205/eb3a1a76-6984-491d-b6f5-d27b46ae08b0)
+![Bản sao của stateMachineLab3-Trang-1 drawio (1)](https://github.com/thanhphucse/TEMP_ASS_MCU/assets/106461205/96632e4a-3155-4026-9d25-8429d209f42a)
+
 
 To understand how the system works, please refer to the link: https://www.canva.com/design/DAFVAq7qPPk/pXNDFy7r6sdf_khbx5y1pA/edit?utm_content=DAFVAq7qPPk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
